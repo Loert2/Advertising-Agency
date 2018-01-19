@@ -1,0 +1,51 @@
+﻿@model IEnumerable<WebApplication4.Models.Category_advertising>
+@using Microsoft.AspNet.Identity
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Категории рекламы</h2>
+<ul class="nav navbar-nav navbar-right">
+    <li>
+        @Html.ActionLink("Заказы клиентов", "IndexManager", "Order", new { id = User.Identity.GetUserId() }, htmlAttributes: new { title = "Показать отправленные заказы" })
+    </li>
+    <li>
+        @Html.ActionLink("Добавить рекламное агенство", "Create", "Manager", new { id = User.Identity.GetUserId() }, htmlAttributes: new { title = "Добавить категорию рекламы" })
+    </li>
+</ul>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Advertising_period)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Visual_aid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Mass_media.Name_mass_media)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Advertising_period)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Visual_aid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Mass_media.Name_mass_media)
+            </td>
+            <td>
+                @Html.ActionLink("Редактировать", "Edit", new { id = item.Id_category_advertising }) |
+                @Html.ActionLink("Удалить", "Delete", new { id = item.Id_category_advertising })
+            </td>
+        </tr>
+    }
+
+</table>

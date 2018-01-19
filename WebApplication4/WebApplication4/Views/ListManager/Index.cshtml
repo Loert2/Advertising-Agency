@@ -1,0 +1,53 @@
+﻿@model IEnumerable<WebApplication4.Models.Manager>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<h2><br></h2>
+<table class="table">
+    <tr>
+        <th>
+            Фамилия
+        </th>
+        <th>
+            Имя
+        </th>
+        <th>
+            Отчество
+        </th>        
+        <th>
+            @Html.DisplayNameFor(model => model.Number_of_processed_clients)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Work_experience)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @item.AspNetUsers.Surname
+            </td>
+            <td>
+                @item.AspNetUsers.Name
+            </td>
+            <td>
+                @item.AspNetUsers.Patronymic
+            </td>           
+            <td>
+                @Html.DisplayFor(modelItem => item.Number_of_processed_clients)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Work_experience)
+            </td>
+            <td>
+                @Html.ActionLink("Добавить личные данные", "CreateInfo", new { id = item.AspNetUsers.Id }, htmlAttributes: new { title = "Добавление личных данных" })
+            </td>
+        </tr>
+    }
+
+</table>

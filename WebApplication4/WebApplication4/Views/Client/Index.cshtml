@@ -1,0 +1,52 @@
+﻿@model IEnumerable<WebApplication4.Models.Category_advertising>
+@using Microsoft.AspNet.Identity
+@{
+    ViewBag.Title = "IndexCategory_advertising";
+}
+
+<h2>Index</h2>
+
+<ul class="nav navbar-nav navbar-right">
+    <li>
+        @Html.ActionLink("Добавить личные данные", "Create", new { id = User.Identity.GetUserId() }, htmlAttributes: new { title = "Добавление личных данных" })
+    </li>
+    <li>
+        @Html.ActionLink("Заказы", "IndexClient", "Order", new { id = User.Identity.GetUserId() }, htmlAttributes: new { title = "Показать мои заказы" })
+    </li>
+    
+</ul>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Advertising_period)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Visual_aid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Mass_media.Name_mass_media)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Advertising_period)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Visual_aid)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Mass_media.Name_mass_media)
+        </td>
+
+        <td>
+            @Html.ActionLink("Отправить заказ", "Create", "Order", new { Id_ca = item.Id_category_advertising }, htmlAttributes: new { title = "Отправить данный заказ" })
+
+        </td>
+    </tr>
+    }
+
+</table>

@@ -1,0 +1,49 @@
+﻿@model WebApplication4.Models.Order
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2><br><br></h2>
+
+<h3>Хотите удалить?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+
+        <dt>
+            Выбранная категория рекламы
+        </dt>
+
+        <dd>
+            @Model.Category_advertising.Id_category_advertising
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Product_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Product_name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Description_wish)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description_wish)
+        </dd>
+    </dl>
+
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

@@ -1,0 +1,52 @@
+﻿@model IEnumerable<WebApplication4.Models.Mass_media>
+@using Microsoft.AspNet.Identity
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Средства массовой информации</h2>
+<ul class="nav navbar-nav navbar-right">
+    <li>
+        @Html.ActionLink("Добавить масс-медиа", "Create", "Mediabuiner", new { id = User.Identity.GetUserId() }, htmlAttributes: new { title = "Добавить масс-медиа" })
+    </li>
+    <li>
+        @Html.ActionLink("Назначить масс-медиа в категорию рекламы ", "Create_id_mass_media", "Mediabuiner", htmlAttributes: new { title = "ID_mass_media" })
+    </li>
+</ul>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name_mass_media)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Subject_area)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name_mass_media)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Subject_area)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id_mass_media }) |                
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id_mass_media })
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,47 @@
+﻿@model WebApplication4.Models.Order
+@{
+    ViewBag.Title = "Send";
+}
+
+<h2><br><br></h2>
+
+<h3>Хотите отправить?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+
+        <dt>
+            Выбранная категория рекламы
+        </dt>
+
+        <dd>
+            @Model.Category_advertising.Id_category_advertising
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Product_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Product_name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Description_wish)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description_wish)
+        </dd>
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Отравить" class="btn btn-default" /> |
+            @Html.ActionLink("Вернуться", "Index")
+        </div>
+    }
+</div>

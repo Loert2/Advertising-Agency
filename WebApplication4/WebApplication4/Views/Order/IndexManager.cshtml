@@ -1,0 +1,86 @@
+﻿@model IEnumerable<WebApplication4.Models.Order>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Заказ</h2>
+<table class="table">
+    <tr>
+        <th>
+            ФИО клиента
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Product_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description_wish)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Temp_of_delivery)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Date_of_withdrawal_of_adertising_turnover)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Category_advertising.Id_category_advertising)
+        </th>
+        <th></th>
+        <th></th>
+
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        if (item.Status != "Черновик")
+        {
+    <tr>
+        <td>
+            @item.Client.AspNetUsers.Surname @item.Client.AspNetUsers.Name @item.Client.AspNetUsers.Patronymic
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Product_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description_wish)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => @item.Date)
+
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Temp_of_delivery)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Date_of_withdrawal_of_adertising_turnover)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => @item.Id_category_advertising)
+
+        </td>
+        <td>
+            @if (item.Status == "Отправлен")
+            {
+            @Html.ActionLink("Подтвердить", "Create", "Order", new { idAp = item.Id_order }, htmlAttributes: new { title = "Подтвердить" })
+            }
+        </td>
+        <td>
+            @if (item.Status == "Отправлен")
+            {
+            @Html.ActionLink("Отклонить", "Decline", "Order", new { idAp = item.Id_order }, htmlAttributes: new { title = "Отклонить" })
+            }
+        </td>
+    </tr>
+        }
+    }
+
+</table>
