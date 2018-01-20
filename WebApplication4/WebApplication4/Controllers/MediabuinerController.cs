@@ -32,6 +32,15 @@ namespace WebApplication4.Controllers
         {
             return View(mass_mediaDAO.Add(st, id));
         }
+        [Authorize(Roles = "Mediabuiner")]
+        [HttpGet]
+        public ActionResult Index_category_advertising()
+        {
+            return View(category_advertisingDAO.GetAll());
+        }
+
+        [Authorize(Roles = "Mediabuiner")]
+        [HttpGet]
         public ActionResult Create_id_mass_media()
         {
             return View();
@@ -42,6 +51,7 @@ namespace WebApplication4.Controllers
         {
             return View(category_advertisingDAO.AddMass_media(st, id));
         }
+
         [Authorize(Roles = "Mediabuiner")]
         [HttpGet]
         public ActionResult Delete(int id)

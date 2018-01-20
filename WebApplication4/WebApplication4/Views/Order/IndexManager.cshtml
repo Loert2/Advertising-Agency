@@ -70,7 +70,7 @@
         <td>
             @if (item.Status == "Отправлен")
             {
-            @Html.ActionLink("Подтвердить", "Create", "Order", new { idAp = item.Id_order }, htmlAttributes: new { title = "Подтвердить" })
+            @Html.ActionLink("Подтвердить", "CreateAnswer", "Order", new { idAp = item.Id_order }, htmlAttributes: new { title = "Подтвердить" })
             }
         </td>
         <td>

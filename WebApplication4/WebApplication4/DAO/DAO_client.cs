@@ -58,7 +58,7 @@ namespace WebApplication4.DAO
             return true;
         }
 
-        public Client Get(string id) // получение инф текушего 
+        public Client Get(string id) 
         {
             try
             {

@@ -103,8 +103,8 @@
           </Key>
           <Property Name="Id_mass_media" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Id_mediabuiner" Type="int" Nullable="false" />
-          <Property Name="Name_mass_media" Type="nchar" MaxLength="20" Nullable="false" />
-          <Property Name="Subject_area" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Name_mass_media" Type="nchar" MaxLength="30" Nullable="false" />
+          <Property Name="Subject_area" Type="nchar" MaxLength="30" Nullable="false" />
           <Property Name="Price" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Mediabuiner">
@@ -471,8 +471,8 @@
           </Key>
           <Property Name="Id_mass_media" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Id_mediabuiner" Type="Int32" Nullable="false" />
-          <Property Name="Name_mass_media" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="Subject_area" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Name_mass_media" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Subject_area" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
           <Property Name="Price" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Category_advertising" Relationship="Self.FK__Category___Id_ma__412EB0B6" FromRole="Mass_media" ToRole="Category_advertising" />
           <NavigationProperty Name="Mediabuiner" Relationship="Self.FK__Mass_medi__Id_me__440B1D61" FromRole="Mass_media" ToRole="Mediabuiner" />

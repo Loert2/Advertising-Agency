@@ -221,6 +221,7 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ManagerController.cs" />
     <Compile Include="Controllers\MediabuinerController.cs" />
+    <Compile Include="Controllers\MessageController.cs" />
     <Compile Include="Controllers\OrderController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\ClientController.cs" />
@@ -424,6 +425,10 @@
     <Content Include="Views\Mediabuiner\Edit.cshtml" />
     <Content Include="Views\Mediabuiner\Delete.cshtml" />
     <Content Include="Views\Mediabuiner\Create_id_mass_media.cshtml" />
+    <Content Include="Views\Mediabuiner\Index_category_advertising.cshtml" />
+    <Content Include="Views\Mediabuiner\Edit_id_mass_media.cshtml" />
+    <Content Include="Views\Message\Error.cshtml" />
+    <Content Include="Views\Order\CreateAnswer.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
