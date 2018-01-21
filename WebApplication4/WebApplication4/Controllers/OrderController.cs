@@ -151,5 +151,27 @@ namespace WebApplication4.Controllers
                 return RedirectToAction("Error", "Message", new { st = "Произошла ошибка!" });
             }
         }
+        [Authorize(Roles = "Manager")]
+        [HttpGet]
+        public ActionResult CreateAnswer()
+        {
+            return View();
+        }
+        
+        [Authorize(Roles = "Manager")]
+        [HttpPost]
+        public ActionResult CreateAnswer(Order obj, int idAp)
+        {
+            string id = User.Identity.GetUserId();
+            obj.Status = "Обработан";
+            if (orderDAO.AddAnswer(obj, id, idAp))
+            {
+                return RedirectToAction("Message", "Message", new { st = "Заказ обработан" });
+            }
+            else
+            {
+                return RedirectToAction("Error", "Message", new { st = "Произошла ошибка!" });
+            }
+        }
     }
 }

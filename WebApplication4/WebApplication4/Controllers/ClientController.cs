@@ -28,8 +28,7 @@ namespace WebApplication4.DAO
         {
             return View();
         }
-
-        // POST: Client/Create
+        
         [Authorize(Roles = "Client")]
         [HttpPost]
         public ActionResult Create(Client collection, int id)

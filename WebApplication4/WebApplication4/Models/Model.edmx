@@ -127,7 +127,7 @@
           <Property Name="Description_wish" Type="nvarchar(max)" Nullable="false" />
           <Property Name="Status" Type="nvarchar" MaxLength="45" Nullable="false" />
           <Property Name="Date" Type="date" Nullable="false" />
-          <Property Name="Temp_of_delivery" Type="int" />
+          <Property Name="Temp_of_delivery" Type="nvarchar" MaxLength="50" />
           <Property Name="Date_of_withdrawal_of_adertising_turnover" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <Association Name="FK__Category___Id_ma__01142BA1">
@@ -202,7 +202,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Order__Id_catego__4BAC3F29">
+        <Association Name="FK__Order__Id_catego__2739D489">
           <End Role="Category_advertising" Type="Self.Category_advertising" Multiplicity="1" />
           <End Role="Order" Type="Self.Order" Multiplicity="*" />
           <ReferentialConstraint>
@@ -331,7 +331,7 @@
             <End Role="AspNetUsers" EntitySet="AspNetUsers" />
             <End Role="Mediabuiner" EntitySet="Mediabuiner" />
           </AssociationSet>
-          <AssociationSet Name="FK__Order__Id_catego__4BAC3F29" Association="Self.FK__Order__Id_catego__4BAC3F29">
+          <AssociationSet Name="FK__Order__Id_catego__2739D489" Association="Self.FK__Order__Id_catego__2739D489">
             <End Role="Category_advertising" EntitySet="Category_advertising" />
             <End Role="Order" EntitySet="Order" />
           </AssociationSet>
@@ -497,13 +497,13 @@
           <Property Name="Id_category_advertising" Type="Int32" Nullable="false" />
           <Property Name="Status" Type="String" MaxLength="45" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="Temp_of_delivery" Type="Int32" />
+          <Property Name="Temp_of_delivery" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
           <Property Name="Date_of_withdrawal_of_adertising_turnover" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="Category_advertising" Relationship="Self.FK__Order__Id_catego__46E78A0C" FromRole="Order" ToRole="Category_advertising" />
           <NavigationProperty Name="Client" Relationship="Self.FK__Order__Id_client__45F365D3" FromRole="Order" ToRole="Client" />
           <NavigationProperty Name="Manager" Relationship="Self.FK__Order__Id_manage__44FF419A" FromRole="Order" ToRole="Manager" />
-          <Property Name="Product_name" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="Description_wish" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Product_name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Description_wish" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
         <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
           <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">

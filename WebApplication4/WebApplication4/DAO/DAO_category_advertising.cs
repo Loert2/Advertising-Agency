@@ -28,7 +28,7 @@ namespace WebApplication4.DAO
             }
             return true;
         }
-        public Category_advertising Get(int id)
+        public Category_advertising Get(int? id)
         {
             try
             {

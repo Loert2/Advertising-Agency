@@ -20,7 +20,7 @@ namespace WebApplication4.Models
         public int Id_category_advertising { get; set; }
         public string Status { get; set; }
         public System.DateTime Date { get; set; }
-        public Nullable<int> Temp_of_delivery { get; set; }
+        public string Temp_of_delivery { get; set; }
         public string Date_of_withdrawal_of_adertising_turnover { get; set; }
         public string Product_name { get; set; }
         public string Description_wish { get; set; }

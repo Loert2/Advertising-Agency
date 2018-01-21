@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System;
+using System.Data.Entity.Validation;
+
 
 namespace WebApplication4.DAO
 {
@@ -69,7 +71,7 @@ namespace WebApplication4.DAO
             try
             {
                 var EntityApplication = _entities.Order.FirstOrDefault(n => n.Id_order == idAp);
-                string st = "Отклонен";
+                string st = "Черновик";
                 EntityApplication.Status = st;
                 _entities.SaveChanges();
                 logger.Debug("Изменен статус заказа");
@@ -149,20 +151,19 @@ namespace WebApplication4.DAO
     
 
 
-    public bool AddAnswer(Order st, string pos_id, int idAp)
+    public bool AddAnswer(Order st, string id, int idAp)
         {
             try
             {
                 var EntityOrder = _entities.Order.FirstOrDefault(n => n.Id_order == idAp);
-                st.Id_client = EntityOrder.Id_client;
-                EntityOrder.Status = "Подтвержден";
-                _entities.SaveChanges();
-                var currentUser = new Entities1().AspNetUsers.Where(n => n.Id.Equals(pos_id)).FirstOrDefault();
+                var currentUser = new Entities1().AspNetUsers.Where(n => n.Id.Equals(id)).FirstOrDefault();
                 var EntityManager = _entities.Manager.FirstOrDefault(n => n.Id_user == currentUser.Id);
-                st.Id_manager = EntityManager.Id_manager;
-                _entities.Order.Add(st);
+                EntityOrder.Id_manager = EntityManager.Id_manager;
+                EntityOrder.Status = "Обработан";
+                EntityOrder.Temp_of_delivery = st.Temp_of_delivery;
+                EntityOrder.Date_of_withdrawal_of_adertising_turnover = st.Date_of_withdrawal_of_adertising_turnover;
                 _entities.SaveChanges();
-                logger.Debug("Заказ подтвержден");
+                logger.Debug("Заказ обработан");
             }
             catch (System.ServiceModel.CommunicationException ex)
             {

@@ -25,20 +25,7 @@ namespace WebApplication4.DAO
             }
             return null;
         }
-        public IEnumerable<Client> GetMyAll(string id)
-        {
-            try
-            {
-                IEnumerable<Client> list = _entities.Client.Where(n => n.Id_user == id).Select(n => n);
-                logger.Debug("Получение списка клиентов");
-                return list;
-            }
-            catch (System.ServiceModel.CommunicationException ex)
-            {
-                logger.Error("Ошибка: ", ex);
-            }
-            return null;
-        }
+        
         public bool Add(Client st, int id)
         {
             try
@@ -48,7 +35,7 @@ namespace WebApplication4.DAO
                 st.Id_client = id;
                 _entities.Client.Add(st);
                 _entities.SaveChanges();
-                logger.Debug("Добавление информации поситителя");
+                logger.Debug("Добавление информации клиента");
             }
             catch (System.ServiceModel.CommunicationException ex)
             {
