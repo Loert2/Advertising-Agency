@@ -31,7 +31,15 @@ namespace WebApplication4.Controllers
         [HttpPost]
         public ActionResult Create(Category_advertising st, string id)
         {
-            return View(category_advertisingDAO.Add(st, id));
+            if (category_advertisingDAO.Add(st, id))
+            {
+                return RedirectToAction("Message", "Message", new { str = "Добавлена категория рекламы" });
+            }
+            else
+            {
+                return RedirectToAction("Error", "Message", new { str = "Произошла ошибка!" });
+            }
+            
         }
         [Authorize(Roles = "Manager")]
         [HttpGet]
@@ -39,11 +47,40 @@ namespace WebApplication4.Controllers
         {
             return View("Delete", category_advertisingDAO.Get(id));
         }
+
+        [Authorize(Roles = "Manager")]
+        [HttpPost]
+        public ActionResult Delete(int id, FormCollection collection)
+        {
+            if (category_advertisingDAO.Delete(id))
+            {
+                return RedirectToAction("Message", "Message", new { str = "Категория рекламы успешно удалена" });
+            }
+            else
+            {
+                return RedirectToAction("Error", "Message", new { str = "Произошла ошибка!" });
+            }            
+        }
+
         [Authorize(Roles = "Manager")]
         [HttpGet]
         public ActionResult Edit(int id)
         {
             return View();
+        }
+
+        [Authorize(Roles = "Manager")]
+        [HttpPost]
+        public ActionResult Edit(int id, Category_advertising collection)
+        {           
+            if (category_advertisingDAO.Update(id, collection))
+            {
+                return RedirectToAction("Message", "Message", new { str = "Обновление прошло успешно" });
+            }
+            else
+            {
+                return RedirectToAction("Error", "Message", new { str = "Произошла ошибка!" });
+            }
         }
     }
 }

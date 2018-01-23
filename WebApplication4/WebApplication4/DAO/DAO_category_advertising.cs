@@ -54,7 +54,7 @@ namespace WebApplication4.DAO
             }
             return null;
         }
-        public IEnumerable<Category_advertising> Add(Category_advertising st, string id)
+        public bool Add(Category_advertising st, string id)
         {
             try
             {
@@ -70,7 +70,40 @@ namespace WebApplication4.DAO
             {
                 logger.Error("Ошибка: ", ex);
             }
-            return null;
+            return false;
+        }
+        public bool Delete(int id)
+        {
+            try
+            {
+                Category_advertising applicationToDelete = Get(id);
+                _entities.Category_advertising.Remove(applicationToDelete);
+                _entities.SaveChanges();
+                logger.Debug("Категория рекламы удалена");
+            }
+            catch (System.ServiceModel.CommunicationException ex)
+            {
+                logger.Error("Ошибка: ", ex);
+                return false;
+            }
+            return true;
+        }
+        public bool Update(int id, Category_advertising st)
+        {
+            try
+            {
+                var Entity = _entities.Category_advertising.FirstOrDefault(n => n.Id_category_advertising == id);
+                Entity.Advertising_period = st.Advertising_period;
+                Entity.Visual_aid = st.Visual_aid;
+                _entities.SaveChanges();
+                logger.Debug("Категория рекламы обнавлена");
+            }
+            catch (System.ServiceModel.CommunicationException ex)
+            {
+                logger.Error("Ошибка: ", ex);
+                return false;
+            }
+            return true;
         }
     }
 }

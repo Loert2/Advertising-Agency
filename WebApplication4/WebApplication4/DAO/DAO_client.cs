@@ -30,7 +30,6 @@ namespace WebApplication4.DAO
         {
             try
             {
-                //var currentUser = new Entities1().AspNetUsers.Where(n => n.Id.Equals(id)).FirstOrDefault();
                 st.Id_user = id;
                 _entities.Client.Add(st);
                 _entities.SaveChanges();

@@ -45,7 +45,7 @@ namespace WebApplication4.DAO
             return null;
         }
 
-        public bool Add( Order Entity, string id, string status) //Подтверждение
+        public bool Add( Order Entity, string id, string status) 
         {
             try
             {
@@ -66,7 +66,7 @@ namespace WebApplication4.DAO
             }
             return true;
         }
-        public bool Decline(int idAp) //Отклонение
+        public bool Decline(int idAp) 
         {
             try
             {

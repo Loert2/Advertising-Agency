@@ -35,11 +35,11 @@ namespace WebApplication4.DAO
         {
             if (clientDAO.Add(collection, User.Identity.GetUserId()))
             {
-                return RedirectToAction("Message", "Message", new { st = "Информация пользователя добавлена!" });
+                return RedirectToAction("Message", "Message", new { str = "Информация пользователя добавлена!" });
             }
             else
             {
-                return RedirectToAction("Error", "Message", new { st = "Произошла ошибка!" });
+                return RedirectToAction("Error", "Message", new { str = "Произошла ошибка!" });
             }
         }
     }

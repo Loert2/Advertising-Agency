@@ -46,20 +46,20 @@ namespace WebApplication4.Controllers
                 case "Добавить":
                     if (userDAO.UpdateRoles(id, collection))
                     {
-                        return RedirectToAction("Message", "Message", new { st = "Добавление роли прошло успешно!" });
+                        return RedirectToAction("Message", "Message", new { str = "Добавление роли прошло успешно!" });
                     }
                     else
                     {
-                        return RedirectToAction("Error", "Message", new { st = "Произошла ошибка!" });
+                        return RedirectToAction("Error", "Message", new { str = "Произошла ошибка!" });
                     }
                 case "Удалить":
                     if (userDAO.DeleteRoles(id, collection))
                     {
-                        return RedirectToAction("Message", "Message", new { st = "Удаление прошло успешно!" });
+                        return RedirectToAction("Message", "Message", new { str = "Удаление прошло успешно!" });
                     }
                     else
                     {
-                        return RedirectToAction("Error", "Message", new { st = "Произошла ошибка!" });
+                        return RedirectToAction("Error", "Message", new { str = "Произошла ошибка!" });
                     }
                 default:
                     return (View());
@@ -81,11 +81,11 @@ namespace WebApplication4.Controllers
         {
             if (userDAO.Delete(id))
             {
-                return RedirectToAction("Message", "Message", new { st = "Удаленее пользователя прошло успешно!" });
+                return RedirectToAction("Message", "Message", new { str = "Удаленее пользователя прошло успешно!" });
             }
             else
             {
-                return RedirectToAction("Error", "Message", new { st = "Произошла ошибка!" });
+                return RedirectToAction("Error", "Message", new { str = "Произошла ошибка!" });
             }
         }
     }

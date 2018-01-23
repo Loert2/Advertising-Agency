@@ -49,20 +49,20 @@ namespace WebApplication4.Controllers
                 case "Отправить":
                     if (orderDAO.Add(obj, id, "Отправлен"))
                     {
-                        return RedirectToAction("Message", "Message", new { st = "Заявка отправлена!" });
+                        return RedirectToAction("Message", "Message", new { str = "Заявка отправлена!" });
                     }
                     else
                     {
-                        return RedirectToAction("Error", "Message", new { st = "Произошла ошибка!" });
+                        return RedirectToAction("Error", "Message", new { str = "Произошла ошибка!" });
                     }
                 case "Сохранить как черновик":
                     if (orderDAO.Add(obj, id, "Черновик"))
                     {
-                        return RedirectToAction("Message", "Message", new { st = "Заказ сохранен как черновик!" });
+                        return RedirectToAction("Message", "Message", new { str = "Заказ сохранен как черновик!" });
                     }
                     else
                     {
-                        return RedirectToAction("Error", "Message", new { st = "Произошла ошибка!" });
+                        return RedirectToAction("Error", "Message", new { str = "Произошла ошибка!" });
                     }
                 default:
                     return (View());
@@ -75,11 +75,11 @@ namespace WebApplication4.Controllers
         {
             if (orderDAO.Decline(idAp))
             {
-                return RedirectToAction("Message", "Message", new { st = "Заказ отклонен!" });
+                return RedirectToAction("Message", "Message", new { str = "Заказ отклонен!" });
             }
             else
             {
-                return RedirectToAction("Error", "Message", new { st = "Произошла ошибка!" });
+                return RedirectToAction("Error", "Message", new { str = "Произошла ошибка!" });
             }
         }
 
@@ -98,11 +98,11 @@ namespace WebApplication4.Controllers
             collection.Id_order = id;
             if (orderDAO.Update(id, collection))
             {
-                return RedirectToAction("Message", "Message", new { st = "Обновление прошло успешно!" });
+                return RedirectToAction("Message", "Message", new { str = "Обновление прошло успешно!" });
             }
             else
             {
-                return RedirectToAction("Error", "Message", new { st = "Произошла ошибка!" });
+                return RedirectToAction("Error", "Message", new { str = "Произошла ошибка!" });
             }
         }
 
@@ -121,11 +121,11 @@ namespace WebApplication4.Controllers
         {
             if (orderDAO.Delete(id))
             {
-                return RedirectToAction("Message", "Message", new { st = "Удаление прошло успешно!" });
+                return RedirectToAction("Message", "Message", new { str = "Удаление прошло успешно!" });
             }
             else
             {
-                return RedirectToAction("Error", "Message", new { st = "Произошла ошибка!" });
+                return RedirectToAction("Error", "Message", new { str = "Произошла ошибка!" });
             }
         }
 
@@ -144,11 +144,11 @@ namespace WebApplication4.Controllers
         {
             if (orderDAO.Send(id))
             {
-                return RedirectToAction("Message", "Message", new { st = "Вы отправили заказ!" });
+                return RedirectToAction("Message", "Message", new { str = "Вы отправили заказ!" });
             }
             else
             {
-                return RedirectToAction("Error", "Message", new { st = "Произошла ошибка!" });
+                return RedirectToAction("Error", "Message", new { str = "Произошла ошибка!" });
             }
         }
         [Authorize(Roles = "Manager")]
@@ -166,11 +166,11 @@ namespace WebApplication4.Controllers
             obj.Status = "Обработан";
             if (orderDAO.AddAnswer(obj, id, idAp))
             {
-                return RedirectToAction("Message", "Message", new { st = "Заказ обработан" });
+                return RedirectToAction("Message", "Message", new { str = "Заказ обработан" });
             }
             else
             {
-                return RedirectToAction("Error", "Message", new { st = "Произошла ошибка!" });
+                return RedirectToAction("Error", "Message", new { str = "Произошла ошибка!" });
             }
         }
     }

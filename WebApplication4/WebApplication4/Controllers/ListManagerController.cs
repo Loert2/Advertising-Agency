@@ -34,11 +34,11 @@ namespace WebApplication4.Controllers
         {
             if (managerDAO.Add(collection, id))
             {
-                return RedirectToAction("Message", "Message", new { st = "Личная информация добавлена!" });
+                return RedirectToAction("Message", "Message", new { str = "Личная информация добавлена!" });
             }
             else
             {
-                return RedirectToAction("Error", "Message", new { st = "Произошла ошибка!" });
+                return RedirectToAction("Error", "Message", new { str = "Произошла ошибка!" });
             }
         }
 

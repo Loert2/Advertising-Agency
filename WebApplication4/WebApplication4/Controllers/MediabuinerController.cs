@@ -30,7 +30,14 @@ namespace WebApplication4.Controllers
         [HttpPost]
         public ActionResult Create(Mass_media st, string id)
         {
-            return View(mass_mediaDAO.Add(st, id));
+            if (mass_mediaDAO.Add(st, id))
+            {
+                return RedirectToAction("Message", "Message", new { str = "Средство массовой информации добавлено" });
+            }
+            else
+            {
+                return RedirectToAction("Error", "Message", new { str = "Произошла ошибка!" });
+            }
         }
         [Authorize(Roles = "Mediabuiner")]
         [HttpGet]
@@ -48,9 +55,15 @@ namespace WebApplication4.Controllers
         [Authorize(Roles = "Mediabuiner")]
         [HttpPost]
         public ActionResult Create_id_mass_media(Category_advertising st, int id)
-        {
-            category_advertisingDAO.AddMass_media(st, id);
-            return View();
+        {           
+            if (category_advertisingDAO.AddMass_media(st, id))
+            {
+                return RedirectToAction("Message", "Message", new { str = "Добавлено средство массовой информации в категорию рекламы" });
+            }
+            else
+            {
+                return RedirectToAction("Error", "Message", new { str = "Произошла ошибка!" });
+            }
         }
 
         [Authorize(Roles = "Mediabuiner")]
@@ -59,11 +72,40 @@ namespace WebApplication4.Controllers
         {
             return View("Delete", mass_mediaDAO.Get(id));
         }
+
+        [Authorize(Roles = "Manager")]
+        [HttpPost]
+        public ActionResult Delete(int id, FormCollection collection)
+        {
+            if (mass_mediaDAO.Delete(id))
+            {
+                return RedirectToAction("Message", "Message", new { str = "Средство массовой информации успешно удалено" });
+            }
+            else
+            {
+                return RedirectToAction("Error", "Message", new { str = "Произошла ошибка!" });
+            }
+        }
+
         [Authorize(Roles = "Mediabuiner")]
         [HttpGet]
         public ActionResult Edit(int id)
         {
             return View();
+        }
+
+        [Authorize(Roles = "Manager")]
+        [HttpPost]
+        public ActionResult Edit(int id, Mass_media collection)
+        {
+            if (mass_mediaDAO.Update(id, collection))
+            {
+                return RedirectToAction("Message", "Message", new { str = "Обновление прошло успешно" });
+            }
+            else
+            {
+                return RedirectToAction("Error", "Message", new { str = "Произошла ошибка!" });
+            }
         }
     }
 }
