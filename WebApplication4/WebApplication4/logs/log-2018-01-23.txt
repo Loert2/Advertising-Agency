@@ -2,3 +2,7 @@
 2018-01-23 15:02:36.7286 WebApplication4.DAO.DAO_mass_media Добавлено стредство массовой информации
 2018-01-23 15:02:39.5057 WebApplication4.DAO.DAO_mass_media Получен список массовой информации
 2018-01-23 15:03:22.3746 WebApplication4.DAO.DAO_mass_media Получен список массовой информации
+2018-01-23 16:23:08.7542 WebApplication4.DAO.DAO_mass_media Получен список массовой информации
+2018-01-23 16:26:41.3943 WebApplication4.DAO.DAO_mass_media Получен список массовой информации
+2018-01-23 16:27:22.6089 WebApplication4.DAO.DAO_mass_media Средство массовой информации обнавлено
+2018-01-23 16:27:40.4535 WebApplication4.DAO.DAO_mass_media Получен список массовой информации

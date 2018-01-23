@@ -73,7 +73,7 @@ namespace WebApplication4.Controllers
             return View("Delete", mass_mediaDAO.Get(id));
         }
 
-        [Authorize(Roles = "Manager")]
+        [Authorize(Roles = "Mediabuiner")]
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {
@@ -94,7 +94,7 @@ namespace WebApplication4.Controllers
             return View();
         }
 
-        [Authorize(Roles = "Manager")]
+        [Authorize(Roles = "Mediabuiner")]
         [HttpPost]
         public ActionResult Edit(int id, Mass_media collection)
         {
