@@ -31,9 +31,9 @@ namespace WebApplication4.DAO
         
         [Authorize(Roles = "Client")]
         [HttpPost]
-        public ActionResult Create(Client collection, int id)
+        public ActionResult Create(Client collection)
         {
-            if (clientDAO.Add(collection, id))
+            if (clientDAO.Add(collection, User.Identity.GetUserId()))
             {
                 return RedirectToAction("Message", "Message", new { st = "Информация пользователя добавлена!" });
             }

@@ -335,6 +335,7 @@
     </Content>
     <Content Include="NLog.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="Mvc.sitemap" />
     <None Include="MvcSiteMapSchema.xsd">
@@ -413,7 +414,6 @@
     <Content Include="Views\Shared\DisplayTemplates\MetaRobotsHelperModel.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\MenuHelperModel.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\CanonicalHelperModel.cshtml" />
-    <Content Include="Views\Shared\menu.cshtml" />
     <Content Include="Views\ListUser\Edit.cshtml" />
     <Content Include="Views\Manager\Create.cshtml" />
     <Content Include="Views\Manager\Delete.cshtml" />
@@ -424,11 +424,10 @@
     <Content Include="Views\Mediabuiner\Create.cshtml" />
     <Content Include="Views\Mediabuiner\Edit.cshtml" />
     <Content Include="Views\Mediabuiner\Delete.cshtml" />
-    <Content Include="Views\Mediabuiner\Create_id_mass_media.cshtml" />
     <Content Include="Views\Mediabuiner\Index_category_advertising.cshtml" />
-    <Content Include="Views\Mediabuiner\Edit_id_mass_media.cshtml" />
     <Content Include="Views\Message\Error.cshtml" />
     <Content Include="Views\Order\CreateAnswer.cshtml" />
+    <Content Include="Views\Mediabuiner\Create_id_mass_media.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

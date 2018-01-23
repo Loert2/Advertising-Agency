@@ -26,13 +26,12 @@ namespace WebApplication4.DAO
             return null;
         }
         
-        public bool Add(Client st, int id)
+        public bool Add(Client st, string id)
         {
             try
             {
-                var currentUser = new Entities1().AspNetUsers.Where(n => n.Id.Equals(id)).FirstOrDefault();
-                st.Id_user = currentUser.Id;
-                st.Id_client = id;
+                //var currentUser = new Entities1().AspNetUsers.Where(n => n.Id.Equals(id)).FirstOrDefault();
+                st.Id_user = id;
                 _entities.Client.Add(st);
                 _entities.SaveChanges();
                 logger.Debug("Добавление информации клиента");

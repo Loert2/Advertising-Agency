@@ -10,14 +10,12 @@ namespace WebApplication4.DAO
         private Entities1 _entities = new Entities1();
         private static Logger logger = LogManager.GetCurrentClassLogger();
         
-        public bool AddMass_media(Mass_media st, int id)
+        public bool AddMass_media(Category_advertising st, int id)
         {
             try
             {
-                Mass_media obj = _entities.Mass_media.Add(st);
-                _entities.SaveChanges();
                 var Entity = _entities.Category_advertising.FirstOrDefault(n => n.Id_category_advertising == id);
-                Entity.Id_mass_media = obj.Id_mass_media;
+                Entity.Id_mass_media = st.Id_mass_media;
                 _entities.SaveChanges();
                 logger.Debug("Добавление масс-медиа");
             }

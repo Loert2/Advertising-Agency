@@ -47,9 +47,10 @@ namespace WebApplication4.Controllers
         }
         [Authorize(Roles = "Mediabuiner")]
         [HttpPost]
-        public ActionResult Create_id_mass_media(Mass_media st, int id)
+        public ActionResult Create_id_mass_media(Category_advertising st, int id)
         {
-            return View(category_advertisingDAO.AddMass_media(st, id));
+            category_advertisingDAO.AddMass_media(st, id);
+            return View();
         }
 
         [Authorize(Roles = "Mediabuiner")]
