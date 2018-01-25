@@ -1,0 +1,38 @@
+2018-01-25 11:27:20.5458 WebApplication4.DAO.DAO_user Получение списка пользователей
+2018-01-25 11:27:43.1371 WebApplication4.DAO.DAO_user Получение пользователя
+2018-01-25 11:30:26.3773 WebApplication4.DAO.DAO_category_advertising Получен список категорий рекламы
+2018-01-25 11:33:15.0129 WebApplication4.DAO.DAO_category_advertising Получен список категорий рекламы
+2018-01-25 11:33:19.9930 WebApplication4.DAO.DAO_order Получен список заказов
+2018-01-25 11:38:12.3570 WebApplication4.DAO.DAO_category_advertising Получен список категорий рекламы
+2018-01-25 11:38:47.0152 WebApplication4.DAO.DAO_category_advertising Получен список категорий рекламы
+2018-01-25 11:40:47.5116 WebApplication4.DAO.DAO_order Получен список заказов
+2018-01-25 11:42:18.8589 WebApplication4.DAO.DAO_category_advertising Получен список категорий рекламы
+2018-01-25 11:43:51.8121 WebApplication4.DAO.DAO_category_advertising Получен список категорий рекламы
+2018-01-25 11:44:14.1055 WebApplication4.DAO.DAO_category_advertising Получен список категорий рекламы
+2018-01-25 11:44:18.0452 WebApplication4.DAO.DAO_order Получен список заказов
+2018-01-25 11:44:23.9314 WebApplication4.DAO.DAO_order Получен заказ
+2018-01-25 11:46:22.2967 WebApplication4.DAO.DAO_category_advertising Получен список категорий рекламы
+2018-01-25 11:46:24.6170 WebApplication4.DAO.DAO_order Получен список заказов
+2018-01-25 11:46:45.9274 WebApplication4.DAO.DAO_category_advertising Получен список категорий рекламы
+2018-01-25 11:46:49.5679 WebApplication4.DAO.DAO_order Получен список заказов
+2018-01-25 11:46:52.4102 WebApplication4.DAO.DAO_order Получен заказ
+2018-01-25 11:46:54.5443 WebApplication4.DAO.DAO_category_advertising Получена категория рекламы
+2018-01-25 11:46:55.2044 WebApplication4.DAO.DAO_order Изменен статус заказа
+2018-01-25 11:47:11.4713 WebApplication4.DAO.DAO_category_advertising Получен список категорий рекламы
+2018-01-25 11:47:15.8838 WebApplication4.DAO.DAO_order Получен список заказов
+2018-01-25 11:51:30.4057 WebApplication4.DAO.DAO_category_advertising Получен список категорий рекламы
+2018-01-25 11:51:36.4074 WebApplication4.DAO.DAO_order Получен список заказов
+2018-01-25 11:54:03.5966 WebApplication4.DAO.DAO_user Получение списка пользователей
+2018-01-25 11:56:19.8682 WebApplication4.DAO.DAO_user Получение списка пользователей
+2018-01-25 11:56:23.2888 WebApplication4.DAO.DAO_user Получение пользователя
+2018-01-25 11:56:31.4307 WebApplication4.DAO.DAO_user Получение пользователя
+2018-01-25 11:58:20.7507 WebApplication4.DAO.DAO_user Получение списка пользователей
+2018-01-25 11:58:39.0240 WebApplication4.DAO.DAO_manager Получен список менеджеров
+2018-01-25 12:00:41.6389 WebApplication4.DAO.DAO_mass_media Получен список массовой информации
+2018-01-25 12:02:48.7906 WebApplication4.DAO.DAO_mass_media Получен список массовой информации
+2018-01-25 12:02:53.0125 WebApplication4.DAO.DAO_mass_media Получен список массовой информации
+2018-01-25 12:03:37.8383 WebApplication4.DAO.DAO_category_advertising Получен список категорий рекламы
+2018-01-25 12:29:22.6439 WebApplication4.DAO.DAO_mediabuiner Получен список медиабайнеров
+2018-01-25 14:08:46.7042 WebApplication4.DAO.DAO_category_advertising Получен список категорий рекламы
+2018-01-25 14:11:40.2761 WebApplication4.DAO.DAO_category_advertising Получен список категорий рекламы
+2018-01-25 14:54:15.7194 WebApplication4.DAO.DAO_category_advertising Получен список категорий рекламы

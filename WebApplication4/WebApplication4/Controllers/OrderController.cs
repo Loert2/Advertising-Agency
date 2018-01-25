@@ -12,32 +12,28 @@ namespace WebApplication4.Controllers
     public class OrderController : Controller
     {
         private DAO_order orderDAO = new DAO_order();
-
-        // GET: Order
+        
         [Authorize(Roles = "Client")]
         [HttpGet]
         public ActionResult IndexClient(string id)
         {
             return View(orderDAO.GetAllClient(id));
         }
-
-        // GET: Order
+        
         [Authorize(Roles = "Manager")]
         [HttpGet]
         public ActionResult IndexManager(string id)
         {
             return View(orderDAO.GetAllManager(id));
         }
-
-        // GET: Order/Create
+        
         [Authorize(Roles = "Client")]
         [HttpGet]
         public ActionResult Create()
         {
             return View();
         }
-
-        // POST: Order/Create
+        
         [Authorize(Roles = "Client")]
         [HttpPost]
         public ActionResult Create(Order obj, int id_ca, string submitButton)
@@ -89,8 +85,7 @@ namespace WebApplication4.Controllers
         {
             return View();
         }
-
-        // POST: ListManager/Edit/
+        
         [Authorize(Roles = "Client")]
         [HttpPost]
         public ActionResult Edit(int id, Order collection)
@@ -105,16 +100,14 @@ namespace WebApplication4.Controllers
                 return RedirectToAction("Error", "Message", new { str = "Произошла ошибка!" });
             }
         }
-
-        // GET: Order/Delete/
+        
         [Authorize(Roles = "Client")]
         [HttpGet]
         public ActionResult Delete(int id)
         {
             return View("Delete", orderDAO.Get(id));
         }
-
-        // POST: Order/Delete/
+        
         [Authorize(Roles = "Client")]
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
@@ -128,16 +121,14 @@ namespace WebApplication4.Controllers
                 return RedirectToAction("Error", "Message", new { str = "Произошла ошибка!" });
             }
         }
-
-        // GET: Order/Send/
+        
         [Authorize(Roles = "Client")]
         [HttpGet]
         public ActionResult Send(int id)
         {
             return View("Send", orderDAO.Get(id));
         }
-
-        // POST: Order/Send/
+        
         [Authorize(Roles = "Client")]
         [HttpPost]
         public ActionResult Send(int id, FormCollection collection)

@@ -11,32 +11,28 @@ namespace WebApplication4.Controllers
     public class ListUserController : Controller
     {
         private DAO_user userDAO = new DAO_user();
-
-        // GET: List_user
+        
         [Authorize(Roles = "Administrator")]
         [HttpGet]
         public ActionResult Index()
         {
             return View(userDAO.GetAll());
         }
-
-        // GET: List_user/Details/
+        
         [Authorize(Roles = "Administrator")]
         [HttpGet]
         public ActionResult Details(string id)
         {
             return View(userDAO.Get(id));
         }
-
-        // GET: List_user/Edit/
+        
         [Authorize(Roles = "Administrator")]
         [HttpGet]
         public ActionResult Edit(string id)
         {
             return View();
         }
-
-        // POST: List_user/Edit/
+        
         [Authorize(Roles = "Administrator")]
         [HttpPost]
         public ActionResult Edit(string id, AspNetRoles collection, string submitButton)
@@ -66,7 +62,6 @@ namespace WebApplication4.Controllers
             }
         }
 
-        // GET: List_user/Delete/5
         [Authorize(Roles = "Administrator")]
         [HttpGet]
         public ActionResult Delete(string id)

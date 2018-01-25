@@ -11,7 +11,8 @@ namespace WebApplication4.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Category_advertising
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -23,7 +24,9 @@ namespace WebApplication4.Models
         public int Id_category_advertising { get; set; }
         public int Id_manager { get; set; }
         public Nullable<int> Id_mass_media { get; set; }
+        [Display(Name = "Срок действия рекламы")]
         public string Advertising_period { get; set; }
+        [Display(Name = "Визуальные средства")]
         public string Visual_aid { get; set; }
     
         public virtual Manager Manager { get; set; }

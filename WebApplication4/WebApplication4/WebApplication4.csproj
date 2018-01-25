@@ -213,6 +213,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ListMediabuinerController.cs" />
     <Compile Include="Controllers\ListUserController.cs" />
     <Compile Include="Controllers\ListManagerController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -220,7 +221,6 @@
     <Compile Include="Controllers\MediabuinerController.cs" />
     <Compile Include="Controllers\MessageController.cs" />
     <Compile Include="Controllers\OrderController.cs" />
-    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\ClientController.cs" />
     <Compile Include="DAO\DAO_category_advertising.cs" />
     <Compile Include="DAO\DAO_client.cs" />
@@ -353,7 +353,9 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -388,7 +390,6 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\ListManager\Index.cshtml" />
-    <Content Include="Views\ListManager\EditManager.cshtml" />
     <Content Include="Views\ListManager\CreateInfo.cshtml" />
     <Content Include="Views\ListUser\Index.cshtml" />
     <Content Include="Views\ListUser\Details.cshtml" />
@@ -425,6 +426,8 @@
     <Content Include="Views\Message\Error.cshtml" />
     <Content Include="Views\Order\CreateAnswer.cshtml" />
     <Content Include="Views\Mediabuiner\Create_id_mass_media.cshtml" />
+    <Content Include="Views\ListMediabuiner\Index.cshtml" />
+    <Content Include="Views\ListMediabuiner\CreateInfo.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

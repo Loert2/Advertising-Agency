@@ -11,7 +11,8 @@ namespace WebApplication4.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Client
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,7 +22,9 @@ namespace WebApplication4.Models
         }
     
         public int Id_client { get; set; }
+        [Display(Name = "Паспорт")]
         public string Passport { get; set; }
+        [Display(Name = "Место проживания")]
         public string Address { get; set; }
         public string Id_user { get; set; }
     

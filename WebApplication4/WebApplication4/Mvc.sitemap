@@ -7,7 +7,8 @@
 
 
     <mvcSiteMapNode title="Список пользователей" controller="ListUser" action="Index" roles="Administrator" />
-    <mvcSiteMapNode title="Список менеджеров" controller="ListManager" action="Index" roles="Administrator" /> 
+    <mvcSiteMapNode title="Список менеджеров" controller="ListManager" action="Index" roles="Administrator" />
+    <mvcSiteMapNode title="Список медиабайнеров" controller="ListMediabuiner" action="Index" roles="Administrator" />
 
     <mvcSiteMapNode title="Страница пользователя" controller="Client" action="Index" roles="Client"/>
     <mvcSiteMapNode title="Страница менеджера" controller="Manager" action="Index" roles="Manager"/>

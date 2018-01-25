@@ -20,12 +20,14 @@ namespace WebApplication4.Controllers
         {
             return View(mass_mediaDAO.GetAll());
         }
+
         [Authorize(Roles = "Mediabuiner")]
         [HttpGet]
         public ActionResult Create()
         {
             return View();
         }
+
         [Authorize(Roles = "Mediabuiner")]
         [HttpPost]
         public ActionResult Create(Mass_media st, string id)
@@ -39,6 +41,7 @@ namespace WebApplication4.Controllers
                 return RedirectToAction("Error", "Message", new { str = "Произошла ошибка!" });
             }
         }
+
         [Authorize(Roles = "Mediabuiner")]
         [HttpGet]
         public ActionResult Index_category_advertising()
@@ -52,6 +55,7 @@ namespace WebApplication4.Controllers
         {
             return View();
         }
+
         [Authorize(Roles = "Mediabuiner")]
         [HttpPost]
         public ActionResult Create_id_mass_media(Category_advertising st, int id)

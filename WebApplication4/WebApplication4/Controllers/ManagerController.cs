@@ -41,6 +41,7 @@ namespace WebApplication4.Controllers
             }
             
         }
+
         [Authorize(Roles = "Manager")]
         [HttpGet]
         public ActionResult Delete(int id)

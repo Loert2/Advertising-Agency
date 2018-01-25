@@ -11,18 +11,25 @@ namespace WebApplication4.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Order
     {
         public int Id_order { get; set; }
         public Nullable<int> Id_manager { get; set; }
         public int Id_client { get; set; }
         public int Id_category_advertising { get; set; }
+        [Display(Name = "Статус")]
         public string Status { get; set; }
+        [Display(Name = "Дата заказа")]
         public System.DateTime Date { get; set; }
+        [Display(Name = "Срок сдачи заказа")]
         public string Temp_of_delivery { get; set; }
+        [Display(Name = "Дата снятия рекламы с оборота")]
         public string Date_of_withdrawal_of_adertising_turnover { get; set; }
+        [Display(Name = "Название продукта")]
         public string Product_name { get; set; }
+        [Display(Name = "Описание пожеланий")]
         public string Description_wish { get; set; }
     
         public virtual Category_advertising Category_advertising { get; set; }

@@ -41,6 +41,23 @@ namespace WebApplication4.DAO
             }
             return null;
         }
-        
+
+        public bool Add(Mediabuiner st, string id)
+        {
+            try
+            {
+                var currentUser = new Entities1().AspNetUsers.Where(n => n.Id.Equals(id)).FirstOrDefault();
+                st.Id_user = currentUser.Id;
+                st = _entities.Mediabuiner.Add(st);
+                _entities.SaveChanges();
+                logger.Debug("Добавлен");
+            }
+            catch (System.ServiceModel.CommunicationException ex)
+            {
+                logger.Error("Ошибка: ", ex);
+                return false;
+            }
+            return true;
+        }
     }
 }

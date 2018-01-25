@@ -11,7 +11,8 @@ namespace WebApplication4.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Mass_media
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -22,8 +23,11 @@ namespace WebApplication4.Models
     
         public int Id_mass_media { get; set; }
         public int Id_mediabuiner { get; set; }
+        [Display(Name = "Название СМИ")]
         public string Name_mass_media { get; set; }
+        [Display(Name = "Предметная область")]
         public string Subject_area { get; set; }
+        [Display(Name = "Цена")]
         public int Price { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
